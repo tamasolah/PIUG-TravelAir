@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PIUG-TravelAir/static/css/main.8fb21272.css",
-    "main.js": "/PIUG-TravelAir/static/js/main.e51887ad.js",
+    "main.js": "/PIUG-TravelAir/static/js/main.b72e3656.js",
     "static/js/453.531fe11b.chunk.js": "/PIUG-TravelAir/static/js/453.531fe11b.chunk.js",
     "index.html": "/PIUG-TravelAir/index.html",
     "main.8fb21272.css.map": "/PIUG-TravelAir/static/css/main.8fb21272.css.map",
-    "main.e51887ad.js.map": "/PIUG-TravelAir/static/js/main.e51887ad.js.map",
+    "main.b72e3656.js.map": "/PIUG-TravelAir/static/js/main.b72e3656.js.map",
     "453.531fe11b.chunk.js.map": "/PIUG-TravelAir/static/js/453.531fe11b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8fb21272.css",
-    "static/js/main.e51887ad.js"
+    "static/js/main.b72e3656.js"
   ]
 }
