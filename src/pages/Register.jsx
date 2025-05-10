@@ -14,7 +14,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-white">
+    <div className="pt-24 min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-white">
       <Header title="Creare Cont" showBack />
       <motion.div
         initial={{ opacity: 0, y: 20 }}

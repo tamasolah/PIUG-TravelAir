@@ -1,4 +1,5 @@
 {
+  "homepage": "https://tamasolah.github.io/PIUG-TravelAir",
   "name": "piug-project",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.9.4",
+    "gh-pages": "^6.3.0",
     "keen-slider": "^6.8.6",
     "lucide": "^0.506.0",
     "lucide-react": "^0.503.0",
@@ -26,7 +28,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
   "eslintConfig": {
     "extends": [

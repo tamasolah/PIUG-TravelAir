@@ -1,60 +1,42 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="bg-white dark:bg-gray-950 text-gray-800 dark:text-white shadow-md fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-       
-        <Link to="/" className="text-xl font-bold">
-          <span className="text-blue-600">Travel</span>
-          <span className="text-orange-500">Air</span>
-        </Link>
-
-        
-        <nav className="flex items-center gap-6 text-sm font-medium">
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 underline" : "hover:text-blue-600"
-            }
-          >
-            Despre Noi
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 underline" : "hover:text-blue-600"
-            }
-          >
-            Contact
-          </NavLink>
-
-          <NavLink
-            to="/careers"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 underline" : "hover:text-blue-600"
-            }
-          >
-            Cariere
-          </NavLink>
-
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-600 underline"
-                : "bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
-            }
-          >
-            Autentificare
-          </NavLink>
-
-          <ThemeToggle />
-        </nav>
+    <div className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white">
+      <header className="fixed top-0 left-0 right-0 bg-[#3B4BA0] text-white z-50 shadow">
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        {/* Mobil: logo + meniu pe o singură linie */}
+        <div className="flex flex-col sm:hidden">
+          <div className="text-2xl font-bold mb-2">
+            Travel<span className="text-orange-500">Air</span>
+          </div>
+          <div className="flex flex-wrap items-center justify-start gap-4 text-sm font-medium">
+            <Link to="/" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300">Acasa</Link>
+            <Link to="/aboutus" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300">Despre Noi</Link>
+            <Link to="/contact" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300">Contact</Link>
+            <Link to="/login" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300">Intra in cont</Link>
+            <img src="images/user.png" alt="User icon representing account access" className="w-5 h-5"/>
+          </div>
+        </div>
+    
+        {/* Desktop */}
+        <div className="hidden sm:flex items-center justify-between">
+          <div className="text-2xl font-bold">
+            Travel<span className="text-orange-500">Air</span>
+          </div>
+          <nav className="flex items-center gap-6 text-sm">
+            <Link to="/" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300 font-medium">Acasa</Link>
+            <Link to="/aboutus" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300 font-medium">Despre Noi</Link>
+            <Link to="/contact" className="flex items-center gap-6 text-sm font-medium hover:text-blue-300 font-medium">Contact</Link>
+            <div className="flex items-center gap-2">
+              <Link to="/login" className="hover:text-blue-300 font-medium">Intra in cont</Link>
+               <img src="images/user.png" alt="User icon for login functionality" className="w-5 h-5" />
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
+    </div>
   );
 }

@@ -1,29 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Input from "../components/Input";
 
 export default function Login() {
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [parola, setParola] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Logica simplă de autentificare locală
+    if (email === "admin@example.com" && parola === "admin") {
+      localStorage.setItem("autentificat", "true");
+      navigate("/"); // redirecționează către homepage
+    } else {
+      alert("Date incorecte. Încearcă din nou.");
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-white">
+    <div className="pt-24 min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-white">
       <Header title="Autentificare" />
       <div className="p-4 max-w-md mx-auto space-y-4">
-      
-        <button
-          onClick={() => navigate("/login")}
-          className="flex items-center gap-2 text-sm text-blue-600 hover:underline mb-4"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Înapoi
-        </button>
 
-        <form className="space-y-4">
-          <Input type="email" label="Email" placeholder="Email" />
-          <Input type="password" label="Parolă" placeholder="Parolă" />
+        <form className="space-y-4" onSubmit={handleLogin}>
+          <Input
+            type="email"
+            label="Email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            type="password"
+            label="Parolă"
+            placeholder="Parolă"
+            value={parola}
+            onChange={(e) => setParola(e.target.value)}
+          />
           <button
             type="submit"
             className="w-full bg-gray-800 text-white py-3 rounded hover:bg-gray-900 active:scale-95 transition"
@@ -42,4 +59,3 @@ export default function Login() {
     </div>
   );
 }
-
